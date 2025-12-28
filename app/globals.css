@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Terminal Light Theme (inverted for accessibility) */
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    --primary: 187 100% 42%;
+    --primary-foreground: 220 20% 10%;
+    --secondary: 210 20% 93%;
+    --secondary-foreground: 220 20% 10%;
+    --muted: 210 20% 93%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 160 100% 45%;
+    --accent-foreground: 220 20% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 187 100% 42%;
+    --radius: 0.5rem;
+    
+    /* Terminal-specific */
+    --glow-primary: 187 100% 50%;
+    --glow-accent: 160 100% 50%;
+    --terminal-green: 160 100% 45%;
+    --terminal-cyan: 187 100% 50%;
+  }
+
+  .dark {
+    /* Terminal Dark Theme - The main hacker aesthetic */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 90%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 90%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 240 10% 12%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 160 100% 50%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 187 100% 50%;
+    
+    /* Terminal-specific */
+    --glow-primary: 187 100% 50%;
+    --glow-accent: 160 100% 50%;
+    --terminal-green: 160 100% 50%;
+    --terminal-cyan: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar for terminal aesthetic */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+    border: 2px solid transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+  }
+  
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* Terminal glow effects */
+  .glow-sm {
+    box-shadow: 0 0 10px hsl(var(--glow-primary) / 0.3);
+  }
+  
+  .glow-md {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.4);
+  }
+  
+  .glow-lg {
+    box-shadow: 0 0 30px hsl(var(--glow-primary) / 0.5);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 15px hsl(var(--glow-accent) / 0.4);
+  }
+  
+  /* Text glow */
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--glow-primary) / 0.5);
+  }
+  
+  .text-glow-accent {
+    text-shadow: 0 0 10px hsl(var(--glow-accent) / 0.5);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[hsl(var(--terminal-cyan))] to-[hsl(var(--terminal-green))] bg-clip-text text-transparent;
+  }
+  
+  /* Border glow */
+  .border-glow {
+    @apply border;
+    box-shadow: 
+      0 0 0 1px hsl(var(--glow-primary) / 0.2),
+      0 0 15px hsl(var(--glow-primary) / 0.15),
+      inset 0 0 15px hsl(var(--glow-primary) / 0.05);
+  }
+  
+  /* Terminal card style */
+  .terminal-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50;
+    box-shadow: 
+      0 0 0 1px hsl(var(--primary) / 0.1),
+      0 4px 20px hsl(0 0% 0% / 0.3);
+  }
+  
+  .dark .terminal-card {
+    box-shadow: 
+      0 0 0 1px hsl(var(--primary) / 0.15),
+      0 0 20px hsl(var(--primary) / 0.05),
+      0 4px 30px hsl(0 0% 0% / 0.5);
+  }
+  
+  /* Skeleton shimmer animation */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+  
+  .dark .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--primary) / 0.1) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Pulse glow animation */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+    }
+  }
+  
+  /* Scanline effect (optional, subtle) */
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(0 0% 0% / 0.03) 2px,
+      hsl(0 0% 0% / 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 50;
+  }
+  
+  /* Active nav indicator */
+  .nav-active {
+    @apply relative;
+  }
+  
+  .nav-active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: hsl(var(--primary));
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+}
+
+/* Toaster customization for terminal theme */
+[data-sonner-toaster] {
+  --normal-bg: hsl(var(--card));
+  --normal-border: hsl(var(--border));
+  --normal-text: hsl(var(--foreground));
+  --success-bg: hsl(var(--card));
+  --success-border: hsl(var(--accent));
+  --success-text: hsl(var(--accent));
+  --error-bg: hsl(var(--card));
+  --error-border: hsl(var(--destructive));
+  --error-text: hsl(var(--destructive));
+}
+
+.dark [data-sonner-toaster] [data-sonner-toast] {
+  --normal-bg: hsl(240 10% 8%);
+  box-shadow: 
+    0 0 0 1px hsl(var(--primary) / 0.2),
+    0 4px 20px hsl(0 0% 0% / 0.5);
+}
+
+.dark [data-sonner-toaster] [data-sonner-toast][data-type="success"] {
+  box-shadow: 
+    0 0 0 1px hsl(var(--accent) / 0.3),
+    0 0 15px hsl(var(--accent) / 0.2),
+    0 4px 20px hsl(0 0% 0% / 0.5);
+}
+
+.dark [data-sonner-toaster] [data-sonner-toast][data-type="error"] {
+  box-shadow: 
+    0 0 0 1px hsl(var(--destructive) / 0.3),
+    0 0 15px hsl(var(--destructive) / 0.2),
+    0 4px 20px hsl(0 0% 0% / 0.5);
+}
