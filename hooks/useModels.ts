@@ -70,8 +70,8 @@ export function useRunningModels() {
  * Combine installed and running models with state
  */
 export function useModelsWithState() {
-  const { models: installed, isLoading: installedLoading } = useInstalledModels();
-  const { models: running, isLoading: runningLoading } = useRunningModels();
+  const { models: installed, isLoading: installedLoading, mutate: mutateInstalled } = useInstalledModels();
+  const { models: running, isLoading: runningLoading, mutate: mutateRunning } = useRunningModels();
 
   const isLoading = installedLoading || runningLoading;
 
@@ -100,8 +100,14 @@ export function useModelsWithState() {
     };
   });
 
+  // Combined mutate function
+  const mutate = async () => {
+    await Promise.all([mutateInstalled(), mutateRunning()]);
+  };
+
   return {
     models: modelsWithState,
     isLoading,
+    mutate,
   };
 }

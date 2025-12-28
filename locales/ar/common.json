@@ -84,14 +84,52 @@
   },
   "pull": {
     "title": "سحب نموذج",
-    "description": "تحميل نموذج من سجل Ollama",
+    "description": "تحميل نموذج من سجل Ollama أو Hugging Face",
+    "selectSource": "اختر مصدر النموذج",
     "modelName": "اسم النموذج",
     "modelNamePlaceholder": "مثال: deepseek-r1:8b",
     "pull": "سحب النموذج",
     "pulling": "جاري السحب...",
     "success": "تم سحب النموذج بنجاح",
     "error": "فشل سحب النموذج",
-    "cancel": "إلغاء"
+    "cancel": "إلغاء",
+    "browseModels": "تصفح النماذج في",
+    "quickSelect": "اختيار سريع",
+    "advancedOptions": "خيارات متقدمة",
+    "sources": {
+      "ollama": {
+        "label": "مكتبة Ollama",
+        "description": "نماذج رسمية من سجل Ollama"
+      },
+      "huggingface": {
+        "label": "Hugging Face",
+        "description": "نماذج GGUF من Hugging Face Hub"
+      },
+      "gguf": {
+        "label": "ملف GGUF",
+        "description": "ملفات GGUF مباشرة مع تكميم محدد"
+      },
+      "custom": {
+        "label": "سجل مخصص",
+        "description": "نماذج من خادم سجل Ollama الخاص بك"
+      }
+    },
+    "hfFormat": "تنسيق Hugging Face",
+    "hfLatest": "أحدث ملف GGUF",
+    "hfQuantized": "تكميم محدد (Q4_K_M، Q5_K_M، إلخ.)",
+    "ggufFormat": "خيارات تكميم GGUF",
+    "q4km": "توازن جيد بين الجودة والحجم",
+    "q5km": "جودة أعلى، حجم أكبر",
+    "q8": "أعلى جودة، أكبر حجم",
+    "ollamaFormat": "تنسيق نموذج Ollama",
+    "ollamaDefault": "الإصدار الافتراضي/الأحدث",
+    "ollamaTag": "إصدار محدد (7b، 13b، إلخ.)",
+    "ollamaNamespace": "نموذج مجتمعي",
+    "customFormat": "تنسيق السجل المخصص",
+    "customBasic": "نموذج من سجل مخصص",
+    "customTag": "إصدار/علامة محددة",
+    "customNamespace": "نموذج مع مساحة الاسم",
+    "customTip": "يجب أن يكون السجل الخاص بك يعمل بـ Ollama ويمكن الوصول إليه من شبكتك."
   },
   "create": {
     "title": "إنشاء نموذج",

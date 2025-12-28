@@ -168,17 +168,18 @@ export default function SettingsPage() {
               )}
             </div>
 
-            {/* Common URLs */}
+            {/* Quick Select */}
             <div className="space-y-2">
               <label className="text-sm font-medium font-mono text-muted-foreground">
-                {t('settings.commonUrls') || 'Common URLs'}
+                {t('settings.commonUrls') || 'Quick Select'}
               </label>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'http://localhost:11434/api',
-                  'http://127.0.0.1:11434/api',
-                  'http://host.docker.internal:11434/api',
-                ].map((url) => (
+                  { url: 'http://localhost:11434/api', label: 'localhost:11434' },
+                  { url: 'http://127.0.0.1:11434/api', label: '127.0.0.1:11434' },
+                  { url: 'http://host.docker.internal:11434/api', label: 'host.docker.internal' },
+                  { url: 'https://model.ssa.sa/api', label: 'model.ssa.sa (SSA)' },
+                ].map(({ url, label }) => (
                   <Button
                     key={url}
                     variant="outline"
@@ -189,7 +190,7 @@ export default function SettingsPage() {
                     }}
                     className={`font-mono text-xs ${apiUrl === url ? 'border-primary text-primary' : ''}`}
                   >
-                    {url.replace('http://', '').replace('/api', '')}
+                    {label}
                   </Button>
                 ))}
               </div>

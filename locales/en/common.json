@@ -84,14 +84,52 @@
   },
   "pull": {
     "title": "Pull Model",
-    "description": "Download a model from Ollama registry",
+    "description": "Download a model from Ollama registry or Hugging Face",
+    "selectSource": "Select Model Source",
     "modelName": "Model Name",
     "modelNamePlaceholder": "e.g., deepseek-r1:8b",
     "pull": "Pull Model",
     "pulling": "Pulling...",
     "success": "Model pulled successfully",
     "error": "Failed to pull model",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "browseModels": "Browse models at",
+    "quickSelect": "Quick Select",
+    "advancedOptions": "Advanced Options",
+    "sources": {
+      "ollama": {
+        "label": "Ollama Library",
+        "description": "Official models from Ollama registry"
+      },
+      "huggingface": {
+        "label": "Hugging Face",
+        "description": "GGUF models from Hugging Face Hub"
+      },
+      "gguf": {
+        "label": "GGUF File",
+        "description": "Direct GGUF files with specific quantization"
+      },
+      "custom": {
+        "label": "Custom Registry",
+        "description": "Models from your own Ollama registry server"
+      }
+    },
+    "hfFormat": "Hugging Face Format",
+    "hfLatest": "Latest GGUF file",
+    "hfQuantized": "Specific quantization (Q4_K_M, Q5_K_M, etc.)",
+    "ggufFormat": "GGUF Quantization Options",
+    "q4km": "Good balance of quality and size",
+    "q5km": "Higher quality, larger size",
+    "q8": "Highest quality, largest size",
+    "ollamaFormat": "Ollama Model Format",
+    "ollamaDefault": "Default/latest version",
+    "ollamaTag": "Specific version (7b, 13b, etc.)",
+    "ollamaNamespace": "Community model",
+    "customFormat": "Custom Registry Format",
+    "customBasic": "Model from custom registry",
+    "customTag": "Specific version/tag",
+    "customNamespace": "Model with namespace",
+    "customTip": "Your registry must be running Ollama and accessible from your network."
   },
   "create": {
     "title": "Create Model",
