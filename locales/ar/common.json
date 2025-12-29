@@ -112,6 +112,10 @@
       "custom": {
         "label": "سجل مخصص",
         "description": "نماذج من خادم سجل Ollama الخاص بك"
+      },
+      "hfDataset": {
+        "label": "صور البيانات",
+        "description": "تحميل الصور من مجموعات بيانات Hugging Face"
       }
     },
     "hfFormat": "تنسيق Hugging Face",
@@ -129,7 +133,26 @@
     "customBasic": "نموذج من سجل مخصص",
     "customTag": "إصدار/علامة محددة",
     "customNamespace": "نموذج مع مساحة الاسم",
-    "customTip": "يجب أن يكون السجل الخاص بك يعمل بـ Ollama ويمكن الوصول إليه من شبكتك."
+    "customTip": "يجب أن يكون السجل الخاص بك يعمل بـ Ollama ويمكن الوصول إليه من شبكتك.",
+    "hfDatasetFormat": "تنسيق مجموعة بيانات Hugging Face",
+    "datasetPath": "مسار مجموعة البيانات",
+    "datasetPathPlaceholder": "org/dataset-name",
+    "datasetPathHint": "أدخل مسار مجموعة البيانات (مثال: mozilla-foundation/common_voice_11_0)",
+    "imagePath": "مسار الصورة",
+    "imagePathPlaceholder": "images/sample.png",
+    "imagePathHint": "أدخل مسار الصورة داخل مجموعة البيانات",
+    "preview": "معاينة",
+    "previewing": "جاري تحميل المعاينة...",
+    "download": "تحميل",
+    "downloading": "جاري التحميل...",
+    "downloadSuccess": "تم تحميل الصورة بنجاح",
+    "downloadError": "فشل تحميل الصورة",
+    "previewError": "فشل تحميل المعاينة",
+    "imageSize": "الحجم",
+    "imageType": "النوع",
+    "savedTo": "تم الحفظ في",
+    "hfDatasetExamples": "أمثلة على مجموعات البيانات",
+    "browseDatasets": "تصفح مجموعات البيانات في"
   },
   "create": {
     "title": "إنشاء نموذج",
@@ -182,6 +205,26 @@
     "mb": "ميجابايت",
     "bytes": "بايت",
     "unknown": "غير معروف"
+  },
+  "downloads": {
+    "title": "التنزيلات",
+    "downloading": "جاري تنزيل {{count}} نموذج",
+    "completed": "اكتملت التنزيلات",
+    "overall": "الإجمالي",
+    "cancel": "إلغاء",
+    "clear": "مسح",
+    "clearCompleted": "مسح المكتملة",
+    "pending": "قيد الانتظار...",
+    "preparing": "جاري التحضير...",
+    "pulling": "جاري سحب الطبقة...",
+    "verifying": "جاري التحقق...",
+    "success": "اكتمل التنزيل!",
+    "error": "فشل التنزيل",
+    "cancelled": "تم إلغاء التنزيل",
+    "noDownloads": "لا توجد تنزيلات نشطة",
+    "startDownload": "بدء التنزيل",
+    "downloadInBackground": "سيستمر التنزيل في الخلفية",
+    "alreadyDownloading": "هذا النموذج قيد التنزيل بالفعل"
   },
   "settings": {
     "title": "الإعدادات",

@@ -112,6 +112,10 @@
       "custom": {
         "label": "Custom Registry",
         "description": "Models from your own Ollama registry server"
+      },
+      "hfDataset": {
+        "label": "Dataset Images",
+        "description": "Download images from Hugging Face datasets"
       }
     },
     "hfFormat": "Hugging Face Format",
@@ -129,7 +133,26 @@
     "customBasic": "Model from custom registry",
     "customTag": "Specific version/tag",
     "customNamespace": "Model with namespace",
-    "customTip": "Your registry must be running Ollama and accessible from your network."
+    "customTip": "Your registry must be running Ollama and accessible from your network.",
+    "hfDatasetFormat": "Hugging Face Dataset Format",
+    "datasetPath": "Dataset Path",
+    "datasetPathPlaceholder": "org/dataset-name",
+    "datasetPathHint": "Enter the dataset path (e.g., mozilla-foundation/common_voice_11_0)",
+    "imagePath": "Image Path",
+    "imagePathPlaceholder": "images/sample.png",
+    "imagePathHint": "Enter the path to the image within the dataset",
+    "preview": "Preview",
+    "previewing": "Loading preview...",
+    "download": "Download",
+    "downloading": "Downloading...",
+    "downloadSuccess": "Image downloaded successfully",
+    "downloadError": "Failed to download image",
+    "previewError": "Failed to load preview",
+    "imageSize": "Size",
+    "imageType": "Type",
+    "savedTo": "Saved to",
+    "hfDatasetExamples": "Example datasets",
+    "browseDatasets": "Browse datasets at"
   },
   "create": {
     "title": "Create Model",
@@ -182,6 +205,26 @@
     "mb": "MB",
     "bytes": "bytes",
     "unknown": "Unknown"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "downloading": "Downloading {{count}} model(s)",
+    "completed": "Downloads completed",
+    "overall": "overall",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "clearCompleted": "Clear completed",
+    "pending": "Pending...",
+    "preparing": "Preparing download...",
+    "pulling": "Pulling layer...",
+    "verifying": "Verifying...",
+    "success": "Download complete!",
+    "error": "Download failed",
+    "cancelled": "Download cancelled",
+    "noDownloads": "No active downloads",
+    "startDownload": "Start Download",
+    "downloadInBackground": "Download will continue in background",
+    "alreadyDownloading": "This model is already downloading"
   },
   "settings": {
     "title": "Settings",
